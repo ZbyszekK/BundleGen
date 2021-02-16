@@ -1,0 +1,766 @@
+{
+    "platformName": "rpi3",
+    "os": "linux",
+    "arch": {
+        "arch": "arm",
+        "variant": "v7"
+    },
+    "rdk": {
+        "version": "2020Q4",
+        "supportedFeatures": [
+            "Controller",
+            "DeviceInfo",
+            "Monitor",
+            "OCDM",
+            "TraceControl",
+            "WifiManager",
+            "com.comcast.CoPilot",
+            "com.comcast.DeviceProvisioning",
+            "com.comcast.FrameRate",
+            "com.comcast.HdcpProfile",
+            "com.comcast.HdmiInput",
+            "com.comcast.StateObserver",
+            "com.comcast.StorageManager",
+            "org.rdk.ActivityMonitor",
+            "org.rdk.DeviceDiagnostics",
+            "org.rdk.DisplaySettings",
+            "org.rdk.FrontPanel",
+            "org.rdk.HomeNetworking",
+            "org.rdk.LoggingPreferences",
+            "org.rdk.Network",
+            "org.rdk.OCIContainer",
+            "org.rdk.Proxies",
+            "org.rdk.SleepTimer",
+            "org.rdk.TTSResource",
+            "org.rdk.TTSSettings",
+            "org.rdk.Timer",
+            "org.rdk.UserPreferences",
+            "org.rdk.Warehouse"
+        ]
+    },
+    "hardware": {
+        "graphics": true,
+        "maxRam_disabled": "610M"
+    },
+    "storage": {
+        "persistent": {
+            "storageDir": "/tmp/data",
+            "maxSize": "100M"
+        }
+    },
+    "gpu": {
+        "extraMounts": [
+            {
+                "source": "/usr/share/X11/xkb",
+                "destination": "/usr/share/X11/xkb",
+                "type": "bind",
+                "options": [
+                    "rbind",
+                    "nosuid",
+                    "nodev",
+                    "ro"
+                ]
+            },
+            {
+                "source": "/etc/xdg/gstomx.conf",
+                "destination": "/etc/xdg/gstomx.conf",
+                "type": "bind",
+                "options": [
+                    "rbind",
+                    "nosuid",
+                    "nodev",
+                    "ro"
+                ]
+            }
+        ],
+	"envvar": [],
+        "devs": [
+            {
+                "type": "c",
+                "path": "/dev/vchiq",
+                "major": 245,
+                "minor": 0,
+                "access": "rw"
+            }
+        ],
+        "gfxLibs": [
+            {
+                "src": "/usr/lib/libEGL.so",
+                "dst": "/usr/lib/libEGL.so"
+            },
+            {
+                "src": "/usr/lib/libEGL.so",
+                "dst": "/usr/lib/libEGL.so.1"
+            },
+            {
+                "src": "/usr/lib/libGLESv2.so",
+                "dst": "/usr/lib/libGLESv2.so"
+            },
+            {
+                "src": "/usr/lib/libGLESv2.so",
+                "dst": "/usr/lib/libGLESv2.so.2"
+            },
+            {
+                "src": "/usr/lib/libwayland-egl.so",
+                "dst": "/usr/lib/libwayland-egl.so"
+            },
+            {
+                "src": "/usr/lib/libwayland-egl.so",
+                "dst": "/usr/lib/libwayland-egl.so.0"
+            },
+            {
+                "src": "/usr/lib/libwayland-egl.so",
+                "dst": "/usr/lib/libwayland-egl.so.1"
+            },
+            {
+                "src": "/usr/lib/libessos.so.0",
+                "dst": "/usr/lib/libessos.so.0"
+            },
+            {
+                "src": "/usr/lib/libbcm_host.so",
+                "dst": "/usr/lib/libbcm_host.so"
+            },
+            {
+                "src": "/usr/lib/libvchostif.so",
+                "dst": "/usr/lib/libvchostif.so"
+            },
+            {
+                "src": "/usr/lib/libvcos.so",
+                "dst": "/usr/lib/libvcos.so"
+            },
+            {
+                "src": "/usr/lib/libvchiq_arm.so",
+                "dst": "/usr/lib/libvchiq_arm.so"
+            },
+            {
+                "src": "/usr/lib/libwesteros_simpleshell_client.so.0",
+                "dst": "/usr/lib/libwesteros_simpleshell_client.so.0"
+            },
+            {
+                "src": "/usr/lib/libwayland-server.so.0",
+                "dst": "/usr/lib/libwayland-server.so.0"
+            },
+            {
+                "src": "/lib/libattr.so.1.1.0",
+                "dst": "/lib/libattr.so.1"
+            },
+            {
+                "src": "/lib/libnss_dns-2.24.so",
+                "dst": "/lib/libnss_dns.so.2"
+            },
+            {
+                "src": "/lib/libnss_files-2.24.so",
+                "dst": "/lib/libnss_files.so.2"
+            },
+            {
+                "src": "/lib/libuuid.so.1.3.0",
+                "dst": "/lib/libuuid.so.1"
+            },
+            {
+                "src": "/lib/libz.so.1.2.11",
+                "dst": "/lib/libz.so.1"
+            },
+            {
+                "src": "/usr/lib/bellagio/libomxaudio_effects.so",
+                "dst": "/usr/lib/bellagio/libomxaudio_effects.so"
+            },
+            {
+                "src": "/usr/lib/bellagio/libomxclocksrc.so",
+                "dst": "/usr/lib/bellagio/libomxclocksrc.so"
+            },
+            {
+                "src": "/usr/lib/bellagio/libomxvideosched.so",
+                "dst": "/usr/lib/bellagio/libomxvideosched.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstaamp.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstaamp.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstaesdecrypt.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstaesdecrypt.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstaesencrypt.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstaesencrypt.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstalsa.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstalsa.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstapp.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstapp.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstaudioconvert.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstaudioconvert.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstaudiofx.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstaudiofx.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstaudioparsers.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstaudioparsers.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstaudioresample.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstaudioresample.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstautodetect.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstautodetect.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstavi.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstavi.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstcoreelements.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstcoreelements.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstcoretracers.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstcoretracers.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstdashdemux.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstdashdemux.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstdeinterlace.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstdeinterlace.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstdtcpdec.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstdtcpdec.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstdtcpenc.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstdtcpenc.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstdvrsink.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstdvrsink.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstdvrsrc.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstdvrsrc.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstfaad.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstfaad.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstgio.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstgio.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgsthls.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgsthls.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgsthttpsink.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgsthttpsink.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgsthttpsrc.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgsthttpsrc.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstinterleave.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstinterleave.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstisomp4.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstisomp4.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstlibav.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstlibav.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstmpegtsdemux.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstmpegtsdemux.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstmpg123.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstmpg123.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstomx.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstomx.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstopengl.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstopengl.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstplayback.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstplayback.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstplayersinkbin.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstplayersinkbin.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstqamtunersrc.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstqamtunersrc.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstrbifilter.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstrbifilter.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstsmoothstreaming.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstsmoothstreaming.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstsouphttpsrc.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstsouphttpsrc.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgsttypefindfunctions.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgsttypefindfunctions.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstvideoconvert.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstvideoconvert.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstvideoparsersbad.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstvideoparsersbad.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstvideoscale.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstvideoscale.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstvolume.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstvolume.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstwesterossink.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstwesterossink.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libsubtecfilter.so",
+                "dst": "/usr/lib/gstreamer-1.0/libsubtecfilter.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libsubtecsink.so",
+                "dst": "/usr/lib/gstreamer-1.0/libsubtecsink.so"
+            },
+            {
+                "src": "/usr/lib/libaampjsbindings.so",
+                "dst": "/usr/lib/libaampjsbindings.so"
+            },
+            {
+                "src": "/usr/lib/libaamp.so",
+                "dst": "/usr/lib/libaamp.so"
+            },
+            {
+                "src": "/usr/lib/libabr.so",
+                "dst": "/usr/lib/libabr.so"
+            },
+            {
+                "src": "/usr/lib/libasound.so.2.0.0",
+                "dst": "/usr/lib/libasound.so.2"
+            },
+            {
+                "src": "/usr/lib/libbrcmGLESv2.so",
+                "dst": "/usr/lib/libbrcmGLESv2.so"
+            },
+            {
+                "src": "/usr/lib/libbz2.so.1.0.6",
+                "dst": "/usr/lib/libbz2.so.1"
+            },
+            {
+                "src": "/usr/lib/libcjson.so.1.7.12",
+                "dst": "/usr/lib/libcjson.so.1"
+            },
+            {
+                "src": "/usr/lib/libcrypto.so.1.0.0",
+                "dst": "/usr/lib/libcrypto.so.1"
+            },
+            {
+                "src": "/usr/lib/libcurl.so.4.5.0",
+                "dst": "/usr/lib/libcurl.so.4"
+            },
+            {
+                "src": "/usr/lib/libdash.so",
+                "dst": "/usr/lib/libdash.so"
+            },
+            {
+                "src": "/usr/lib/libdbus-1.so.3.14.7",
+                "dst": "/usr/lib/libdbus-1.so.3"
+            },
+            {
+                "src": "/usr/lib/libDtcpMgr-1.0.so.0.0.1",
+                "dst": "/usr/lib/libDtcpMgr-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libdvrmgr.so.0.0.0",
+                "dst": "/usr/lib/libdvrmgr.so.0"
+            },
+            {
+                "src": "/usr/lib/libdvrmgrsoc.so.0.0.0",
+                "dst": "/usr/lib/libdvrmgrsoc.so.0"
+            },
+            {
+                "src": "/usr/lib/libdvrsink.so.0.0.0",
+                "dst": "/usr/lib/libdvrsink.so.0"
+            },
+            {
+                "src": "/usr/lib/libessosrmgr.so.0",
+                "dst": "/usr/lib/libessosrmgr.so.0"
+            },
+            {
+                "src": "/usr/lib/libfaad.so.2.0.0",
+                "dst": "/usr/lib/libfaad.so.2"
+            },
+            {
+                "src": "/usr/lib/libffi.so.6.0.4",
+                "dst": "/usr/lib/libffi.so.6"
+            },
+            {
+                "src": "/usr/lib/libgio-2.0.so.0.4800.2",
+                "dst": "/usr/lib/libgio-2.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libglib-2.0.so.0.4800.2",
+                "dst": "/usr/lib/libglib-2.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgmodule-2.0.so.0.4800.2",
+                "dst": "/usr/lib/libgmodule-2.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgobject-2.0.so.0.4800.2",
+                "dst": "/usr/lib/libgobject-2.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstadaptivedemux-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstadaptivedemux-1.0.so.0"
+            },            
+            {
+                "src": "/usr/lib/libgstallocators-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstallocators-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstapp-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstapp-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstaudio-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstaudio-1.0.so.0"
+            },            
+            {
+                "src": "/usr/lib/libgstbadbase-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstbadbase-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstbadvideo-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstbadvideo-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstbase-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstbase-1.0.so.0"
+            },            
+            {
+                "src": "/usr/lib/libgstcheck-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstcheck-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstcodecparsers-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstcodecparsers-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstcontroller-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstcontroller-1.0.so.0"
+            },            
+            {
+                "src": "/usr/lib/libgstfft-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstfft-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstgl-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstgl-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstmpegts-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstmpegts-1.0.so.0"
+            },            
+            {
+                "src": "/usr/lib/libgstnet-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstnet-1.0.so.0"
+            },        
+            {
+                "src": "/usr/lib/libgstpbutils-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstpbutils-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstreamer-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstreamer-1.0.so.0"
+            },        
+            {
+                "src": "/usr/lib/libgstriff-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstriff-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstrmfmeta.so.0.0.0",
+                "dst": "/usr/lib/libgstrmfmeta.so.0"
+            },
+            {
+                "src": "/usr/lib/libgstrtp-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstrtp-1.0.so.0"
+            },
+            {
+                "src": "/usr/lib/libgsttag-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgsttag-1.0.so.0"
+            },            
+            {
+                "src": "/usr/lib/libgsturidownloader-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgsturidownloader-1.0.so.0"
+            },            
+            {
+                "src": "/usr/lib/libgstvideo-1.0.so.0.1004.0",
+                "dst": "/usr/lib/libgstvideo-1.0.so.0"
+            },            
+            {
+                "src": "/usr/lib/libgthread-2.0.so.0.4800.2",
+                "dst": "/usr/lib/libgthread-2.0.so.0"
+            },            
+            {
+                "src": "/usr/lib/libhdhomerun.so.1",
+                "dst": "/usr/lib/libhdhomerun.so.1"
+            },            
+            {
+                "src": "/usr/lib/libhnsource.so.0.0.0",
+                "dst": "/usr/lib/libhnsource.so.0"
+            },            
+            {
+                "src": "/usr/lib/libIARMBus.so.0.0.0",
+                "dst": "/usr/lib/libIARMBus.so.0"
+            },            
+            {
+                "src": "/usr/lib/libinbsectionfilter.so.0.0.0",
+                "dst": "/usr/lib/libinbsectionfilter.so.0"
+            },            
+            {
+                "src": "/usr/lib/libinbsimanager.so.0.0.0",
+                "dst": "/usr/lib/libinbsimanager.so.0"
+            },            
+            {
+                "src": "/usr/lib/libjpeg.so.62.2.0",
+                "dst": "/usr/lib/libjpeg.so.62"
+            },  
+            {
+                "src": "/usr/lib/liblog4c.so.3.3.0",
+                "dst": "/usr/lib/liblog4c.so.3"
+            },
+            {
+                "src": "/usr/lib/liblzma.so.5.2.2",
+                "dst": "/usr/lib/liblzma.so.5"
+            },
+            {
+                "src": "/usr/lib/libmpg123.so.0.42.2",
+                "dst": "/usr/lib/libmpg123.so.0"
+            },
+            {
+                "src": "/usr/lib/libnettle.so.4.7",
+                "dst": "/usr/lib/libnettle.so.4"
+            },
+            {
+                "src": "/usr/lib/libocdm.so.1.0.0",
+                "dst": "/usr/lib/libocdm.so.1"
+            },
+            {
+                "src": "/usr/lib/liboobsectionfilter.so.0.0.0",
+                "dst": "/usr/lib/liboobsectionfilter.so.0"
+            },
+            {
+                "src": "/usr/lib/liboobsimgrstub.so.0.0.0",
+                "dst": "/usr/lib/liboobsimgrstub.so.0"
+            },
+            {
+                "src": "/usr/lib/libopenmaxil.so",
+                "dst": "/usr/lib/libopenmaxil.so"
+            },
+            {
+                "src": "/usr/lib/liborc-0.4.so.0.25.0",
+                "dst": "/usr/lib/liborc-0.4.so.0"
+            },
+            {
+                "src": "/usr/lib/libpcre.so.1.2.7",
+                "dst": "/usr/lib/libpcre.so.1"
+            },
+            {
+                "src": "/usr/lib/libpng16.so.16.31.0",
+                "dst": "/usr/lib/libpng16.so.16"
+            },
+            {
+                "src": "/usr/lib/libqamsrc.so.0.0.0",
+                "dst": "/usr/lib/libqamsrc.so.0"
+            },
+            {
+                "src": "/usr/lib/librdkloggers.so.0.0.0",
+                "dst": "/usr/lib/librdkloggers.so.0"
+            },
+            {
+                "src": "/usr/lib/librfcapi.so.0.0.0",
+                "dst": "/usr/lib/librfcapi.so.0"
+            },
+            {
+                "src": "/usr/lib/librmfbase.so.0.0.0",
+                "dst": "/usr/lib/librmfbase.so.0"
+            },
+            {
+                "src": "/usr/lib/librmfosal.so.0.0.0",
+                "dst": "/usr/lib/librmfosal.so.0"
+            },
+            {
+                "src": "/usr/lib/librmfosalutils.so.0.0.0",
+                "dst": "/usr/lib/librmfosalutils.so.0"
+            },
+            {
+                "src": "/usr/lib/libsafec-3.5.1.so.3",
+                "dst": "/usr/lib/libsafec-3.5.1.so.3"
+            },
+            {
+                "src": "/usr/lib/libsectionfilter.so.0.0.0",
+                "dst": "/usr/lib/libsectionfilter.so.0"
+            },
+            {
+                "src": "/usr/lib/libsoup-2.4.so.1.8.0",
+                "dst": "/usr/lib/libsoup-2.4.so.1"
+            },
+            {
+                "src": "/usr/lib/libsqlite3.so.0.8.6",
+                "dst": "/usr/lib/libsqlite3.so.0"
+            },
+            {
+                "src": "/usr/lib/libssl.so.1.0.0",
+                "dst": "/usr/lib/libssl.so.1"
+            },
+            {
+                "src": "/usr/lib/libstdc++.so.6.0.22",
+                "dst": "/usr/lib/libstdc++.so.6"
+            },
+            {
+                "src": "/usr/lib/libTasseograph.so.0.0.0",
+                "dst": "/usr/lib/libTasseograph.so.0"
+            },
+            {
+                "src": "/usr/lib/libtinyxml.so.2.6.2",
+                "dst": "/usr/lib/libtinyxml.so.2"
+            },
+            {
+                "src": "/usr/lib/libwayland-client.so.0.3.0",
+                "dst": "/usr/lib/libwayland-client.so.0"
+            },
+            {
+                "src": "/usr/lib/libwayland-server.so.0.1.0",
+                "dst": "/usr/lib/libwayland-server.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_compositor.so.0.0.0",
+                "dst": "/usr/lib/libwesteros_compositor.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_simplebuffer_client.so.0.0.0",
+                "dst": "/usr/lib/libwesteros_simplebuffer_client.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_simplebuffer_server.so.0.0.0",
+                "dst": "/usr/lib/libwesteros_simplebuffer_server.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_simpleshell_client.so.0.0.0",
+                "dst": "/usr/lib/libwesteros_simpleshell_client.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_simpleshell_server.so.0.0.0",
+                "dst": "/usr/lib/libwesteros_simpleshell_server.so.0"
+            },
+            {
+                "src": "/usr/lib/libWPEFrameworkCore.so.1.0.0",
+                "dst": "/usr/lib/libWPEFrameworkCore.so.1"
+            },
+            {
+                "src": "/usr/lib/libWPEFrameworkCryptalgo.so.1.0.0",
+                "dst": "/usr/lib/libWPEFrameworkCryptalgo.so.1"
+            },
+            {
+                "src": "/usr/lib/libWPEFrameworkProtocols.so.1.0.0",
+                "dst": "/usr/lib/libWPEFrameworkProtocols.so.1"
+            },
+            {
+                "src": "/usr/lib/libWPEFrameworkTracing.so.1.0.0",
+                "dst": "/usr/lib/libWPEFrameworkTracing.so.1"
+            },
+            {
+                "src": "/usr/lib/libxkbcommon.so.0.0.0",
+                "dst": "/usr/lib/libxkbcommon.so.0"
+            },
+            {
+                "src": "/usr/lib/libxml2.so.2.9.4",
+                "dst": "/usr/lib/libxml2.so.2"
+            },
+            {
+                "src": "/usr/lib/omxloaders/libomxdynamicloader.so.0.0.0",
+                "dst": "/usr/lib/omxloaders/libomxdynamicloader.so.0"
+            }
+        ]
+    },
+    "mounts": [
+        {
+            "source": "/dev/snd/by-path",
+            "destination": "/dev/snd/by-path",
+            "options": [
+                "rbind",
+                "nosuid",
+                "nodev",
+                "ro"
+            ]
+        }
+    ],
+    "network": {
+        "options": [
+            "nat",
+            "open",
+            "private"
+        ]
+    },
+    "envvar": [
+        "XDG_RUNTIME_DIR=/tmp",
+        "HOME=/root",
+        "LD_PRELOAD=/usr/lib/libwayland-client.so.0:/usr/lib/libwayland-egl.so.0"        
+    ],
+    "resourceLimits": [
+        {
+            "type": "RLIMIT_NPROC",
+            "hard": 300,
+            "soft": 300
+        },
+        {
+            "type": "RLIMIT_RTPRIO",
+            "hard": 6,
+            "soft": 6
+        }
+    ],
+    "disableUserNamespacing": false,
+    "logging": {
+        "mode": "file",
+        "logDir": "/var/log"
+    },
+    "dobby": {
+        "pluginDir": "/usr/lib/plugins/dobby",
+        "pluginDependencies": [
+            "/usr/lib/libnl-3.so.200",
+            "/usr/lib/libnl-route-3.so.200",
+            "/usr/lib/libyajl.so.2"
+        ]
+    }
+}
