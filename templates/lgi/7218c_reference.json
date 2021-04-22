@@ -71,7 +71,7 @@
             }
         ],
         "envvar": [
-            "LD_PRELOAD=/usr/lib/libwayland-client.so.0:/usr/lib/libwayland-egl.so.0"
+            "LD_PRELOAD=/usr/lib/libnexus.so:/usr/lib/libnxclient.so:/usr/lib/libwayland-client.so.0:/usr/lib/libwayland-egl.so.0"
         ],
         "devs": [
             {
@@ -114,6 +114,128 @@
             {
                 "src": "/usr/lib/libessos.so.0",
                 "dst": "/usr/lib/libessos.so.0"
+            },
+
+
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmaudfilter.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmaudfilter.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmaudiodecoder.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmaudiodecoder.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmaudiosink.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmaudiosink.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmmp3decoder.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmmp3decoder.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmpcmsink.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmpcmsink.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmvideodecoder.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmvideodecoder.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmvidfilter.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmvidfilter.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmvideosink.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmvideosink.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstaesdecrypt.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstaesdecrypt.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmtranscode.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmtranscode.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmtsdemux.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmtsdemux.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libgstwesterossink.so",
+                "dst": "/usr/lib/gstreamer-1.0/libgstwesterossink.so"
+            },
+            {
+                "src": "/usr/lib/gstreamer-1.0/libbrcmgstutil.so",
+                "dst": "/usr/lib/gstreamer-1.0/libbrcmgstutil.so"
+            },
+            {
+                "src": "/usr/lib/libgstrmfmeta.so.0",
+                "dst": "/usr/lib/libgstrmfmeta.so.0"
+            },
+            {
+                "src": "/usr/lib/liblog4c.so.3",
+                "dst": "/usr/lib/liblog4c.so.3"
+            },
+            {
+                "src": "/usr/lib/libmpg123.so.0",
+                "dst": "/usr/lib/libmpg123.so.0"
+            },
+            {
+                "src": "/usr/lib/librdkloggers.so.0",
+                "dst": "/usr/lib/librdkloggers.so.0"
+            },
+            {
+                "src": "/usr/lib/libsrai.so",
+                "dst": "/usr/lib/libsrai.so"
+            },
+            {
+                "src": "/usr/lib/libxkbcommon.so.0",
+                "dst": "/usr/lib/libxkbcommon.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_compositor.so.0",
+                "dst": "/usr/lib/libwesteros_compositor.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_simplebuffer_client.so.0",
+                "dst": "/usr/lib/libwesteros_simplebuffer_client.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_simplebuffer_server.so.0",
+                "dst": "/usr/lib/libwesteros_simplebuffer_server.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_simpleshell_client.so.0",
+                "dst": "/usr/lib/libwesteros_simpleshell_client.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_simpleshell_server.so.0",
+                "dst": "/usr/lib/libwesteros_simpleshell_server.so.0"
+            },
+            {
+                "src": "/usr/lib/libwesteros_gl.so.0",
+                "dst": "/usr/lib/libwesteros_gl.so.0"
+            },
+            {
+                "src": "/usr/lib/libessosrmgr.so.0",
+                "dst": "/usr/lib/libessosrmgr.so.0"
+            },
+            {
+                "src": "/usr/lib/libbrcmsvpmeta.so",
+                "dst": "/usr/lib/libbrcmsvpmeta.so"
+            },
+            {
+                "src": "/usr/lib/libb_os.so",
+                "dst": "/usr/lib/libb_os.so"
+            },
+            {
+                "src": "/usr/lib/libdvrmgrsoc.so.0",
+                "dst": "/usr/lib/libdvrmgrsoc.so.0"
+            },
+            {
+                "src": "/usr/lib/libbrcmsvpmeta.so",
+                "dst": "/usr/lib/libbrcmsvpmeta.so"
             }
         ]
     },
@@ -126,7 +248,10 @@
         ]
     },
     "envvar": [
-        "XDG_RUNTIME_DIR=/tmp"
+        "XDG_RUNTIME_DIR=/tmp",
+        "XDG_DATA_DIRS=/usr/share/xkb",
+        "GDK_BACKEND=wayland",
+        "QT_QPA_PLATFORM=wayland-egl"
     ],
     "resourceLimits": [
         {
